@@ -32,8 +32,6 @@
         }
       }
     });
-
-    console.log(tempArray);
     return tempArray;
   };
 
