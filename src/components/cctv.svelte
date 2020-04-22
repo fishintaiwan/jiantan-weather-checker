@@ -59,7 +59,7 @@
 
   .cctv__grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-row-gap: 2em;
     grid-column-gap: 1em;
   }

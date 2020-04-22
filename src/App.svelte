@@ -22,6 +22,7 @@
     margin-top: 2em;
     position: relative;
     color: var(--primary-text);
+    padding-bottom: 2em;
   }
 </style>
 
