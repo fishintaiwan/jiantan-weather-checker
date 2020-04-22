@@ -26,8 +26,8 @@
   }
 </script>
 
-<style>
-
+<style lang="scss">
+  @import "../scss/_loader.scss";
 </style>
 
 <h2>CCTV</h2>
@@ -35,7 +35,7 @@
   <div>
     <small>{camera.location}</small>
     {#await getImage(camera.id)}
-      Loading ..
+      <span class="loader" />
     {:then data}
       <img src={data.url} alt="CCTV camera at {camera.location}" />
     {:catch error}
