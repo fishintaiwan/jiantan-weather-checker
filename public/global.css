@@ -34,6 +34,10 @@
   position: relative;
 }
 
+.card:hover {
+  box-shadow: var(--box-shadow) var(--bg-secondary);
+}
+
 .card__header {
   position: absolute;
   top: -1em;

@@ -28,18 +28,50 @@
 
 <style lang="scss">
   @import "../scss/_loader.scss";
+
+  .card__image {
+    max-width: 100%;
+    margin: 0;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .card__cctv {
+    padding: 0;
+    max-width: 300px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .cctv_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 1em;
+  }
 </style>
 
 <h2>CCTV</h2>
-{#each urls as camera}
-  <div>
-    <small>{camera.location}</small>
-    {#await getImage(camera.id)}
-      <span class="loader" />
-    {:then data}
-      <img src={data.url} alt="CCTV camera at {camera.location}" />
-    {:catch error}
-      {error} | Opps........
-    {/await}
-  </div>
-{/each}
+<div class="cctv__grid">
+  {#each urls as camera}
+    <div class="card card__cctv">
+      <small class="card__header">{camera.location}</small>
+      {#await getImage(camera.id)}
+        <span class="loader" />
+      {:then data}
+        <img
+          src={data.url}
+          alt="CCTV camera at {camera.location}"
+          class="card__image" />
+      {:catch error}
+        <img
+          src="./img/no-tv.png"
+          class="card__image"
+          alt="Cannot load CCTV image"
+          title="Image by Ouch.pics https://icons8.com" />
+      {/await}
+    </div>
+  {/each}
+</div>
