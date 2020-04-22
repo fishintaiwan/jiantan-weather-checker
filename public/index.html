@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
@@ -15,4 +16,14 @@
 
 <body>
 </body>
+<script>
+	// Check that service workers are supported
+	if ('serviceWorker' in navigator) {
+		// Use the window load event to keep the page load performant
+		window.addEventListener('load', () => {
+			navigator.serviceWorker.register('/sw.js');
+		});
+	}
+</script>
+
 </html>
