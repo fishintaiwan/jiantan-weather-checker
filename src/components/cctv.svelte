@@ -53,6 +53,8 @@
     max-height: 300px;
     min-height: 200px;
     margin: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .cctv__grid {
