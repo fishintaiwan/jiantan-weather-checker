@@ -643,3 +643,9 @@ a {
   height: 100%;
   max-width: 700px;
 }
+
+.card__image-404 {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto !important;
+}

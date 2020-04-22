@@ -32,7 +32,7 @@
   .card__image {
     max-width: 100%;
     margin: 0;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
     border-bottom-left-radius: 5px;
@@ -41,15 +41,25 @@
 
   .card__cctv {
     padding: 0;
-    max-width: 300px;
+    max-width: 400px;
+    min-width: 200px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 300px;
+    min-height: 200px;
+    margin: 0;
   }
 
-  .cctv_grid {
+  .cctv__grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    gap: 1em;
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-row-gap: 2em;
+    grid-column-gap: 1em;
   }
 </style>
 
@@ -68,7 +78,7 @@
       {:catch error}
         <img
           src="./img/no-tv.png"
-          class="card__image"
+          class="card__image .card__image-404"
           alt="Cannot load CCTV image"
           title="Image by Ouch.pics https://icons8.com" />
       {/await}
