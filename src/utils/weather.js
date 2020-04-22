@@ -6,6 +6,13 @@ const getWeather = (async () => {
     return await request.json();
   })();
 
+  function formatTime(d) {
+    let format = new Intl.DateTimeFormat('en-US', {month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", hour12: false, timeZone: 'Asia/Taipei'})
+    const [{ value: mo },,{ value: da },,{ value: ho },,{ value: mi }] = format.formatToParts(d) 
+
+    return `${da}/${mo} ${ho}:${mi}`
+  }
+
   const getTemps = (temp, rain) => {
     let todayDate = new Date();
     let tempArray = [];
@@ -26,7 +33,7 @@ const getWeather = (async () => {
           });
           tempArray = [
             ...tempArray,
-            { time: tempDate, temp: d.elementValue[0].value, rain: percip }
+            { time: formatTime(tempDate), temp: d.elementValue[0].value, rain: percip }
           ];
         }
       }

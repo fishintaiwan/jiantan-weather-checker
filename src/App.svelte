@@ -8,7 +8,9 @@
 </style>
 
 <main>
-  <h1>Jiantan Checker</h1>
-  <Weather />
-  <CCTV />
+  <div class="container">
+    <h1>Jiantan Checker</h1>
+    <Weather />
+    <CCTV />
+  </div>
 </main>
