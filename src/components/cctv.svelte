@@ -11,7 +11,20 @@
 
   async function getImage(path) {
     /* global fetch */
-    const req = fetch(API_URL + path);
+    const req = fetch(API_URL + path, {
+      method: "GET",
+      credentials: "omit"
+    });
+
+    /*
+The server will receive your GET request to https://cctv.bote.gov.taipei:8502/MJPEG/157?overBW=false, with an 'Origin: https://jiantan.surge.sh' header set by the browser.
+
+The server's response headers should include:
+
+Access-Control-Allow-Origin: https://jiantan.surge.sh
+Access-Control-Allow-Credentials: true
+Vary: origin
+*/
 
     const timeout = new Promise((resolve, reject) => {
       return setTimeout(
