@@ -1,8 +1,3 @@
-<script>
-  import Weather from "./components/weather.svelte";
-  import CCTV from "./components/cctv.svelte";
-</script>
-
 <style>
   .text-link {
     font-weight: bold;
@@ -25,6 +20,11 @@
     padding-bottom: 2em;
   }
 </style>
+
+<script>
+  import Weather from "./components/weather.svelte";
+  import CCTV from "./components/cctv.svelte";
+</script>
 
 <main>
   <div class="container">
